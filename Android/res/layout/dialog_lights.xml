@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/dialog_background"
+    android:elevation="@dimen/margin"
+    android:paddingStart="@dimen/margin_2"
+    android:paddingTop="@dimen/margin_4"
+    android:paddingEnd="@dimen/margin_2"
+    android:paddingBottom="@dimen/margin_4">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_3"
+        android:layout_marginTop="@dimen/margin_2"
+        android:text="@string/lights"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"
+        android:textColor="@color/white_2" />
+
+    <TextView
+        android:id="@+id/textFrontLeds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textTitle"
+        android:layout_marginStart="@dimen/margin_3"
+        android:layout_marginTop="@dimen/margin_3"
+        android:text="@string/led_front"
+        android:textColor="@color/main"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textFrontLeds"
+        android:layout_marginStart="@dimen/margin_3"
+        android:text="@string/maximum_level"
+        android:textColor="@color/white" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textPercent"
+        android:max="1023"
+        android:maxHeight="1dp"
+        android:progress="1023"
+        android:progressDrawable="@drawable/progress_bar"
+        android:progressTint="@color/main"
+        android:thumbTint="@color/button_enabled" />
+
+    <Button
+        android:id="@+id/buttonPositive"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seekbar"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_transparent"
+        android:text="@android:string/ok"
+        android:textColor="@color/white" />
+</RelativeLayout>

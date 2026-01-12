@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <lucns.robot6wd.views.FrameView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentEnd="true">
+
+        <ImageButton
+            android:id="@+id/buttonWifi"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:visibility="invisible"
+            android:background="@drawable/fab_transparent"
+            android:src="@drawable/icon_wifi" />
+
+        <ImageButton
+            android:id="@+id/buttonConnection"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_toEndOf="@+id/buttonWifi"
+            android:background="@drawable/fab_transparent"
+            android:src="@drawable/icon_reconnect" />
+
+        <ImageButton
+            android:id="@+id/buttonMenu"
+            android:layout_width="?android:attr/actionBarSize"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_toEndOf="@+id/buttonConnection"
+            android:background="@drawable/fab_transparent"
+            android:src="@drawable/icon_more_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rootRssi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginStart="@dimen/margin_2"
+        android:layout_marginTop="@dimen/margin_3">
+
+        <TextView
+            android:id="@+id/textRssi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rssi" />
+
+        <TextView
+            android:id="@+id/textRssiValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textRssi"
+            android:text="@string/zero_db"
+            android:textColor="@color/red" />
+
+        <TextView
+            android:id="@+id/textBattery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_toEndOf="@+id/textRssi"
+            android:text="@string/battery" />
+
+        <TextView
+            android:id="@+id/textBatteryValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textFps"
+            android:layout_alignStart="@+id/textBattery"
+            android:text="@string/zero_percent" />
+
+        <TextView
+            android:id="@+id/textFps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_toEndOf="@+id/textBattery"
+            android:text="@string/fps" />
+
+        <TextView
+            android:id="@+id/textFpsValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textFps"
+            android:layout_alignStart="@+id/textFps"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/textNetworkVelocity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_toEndOf="@+id/textFps"
+            android:text="@string/kbps" />
+
+        <TextView
+            android:id="@+id/textNetworkVelocityValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textNetworkVelocity"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_toEndOf="@+id/textFps"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/textTx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/textNetworkVelocity"
+            android:text="TX"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textRx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textTx"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_toEndOf="@+id/textNetworkVelocity"
+            android:text="RX"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textRx" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rootController"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="110dp">
+
+        <lucns.robot6wd.views.TriangleView
+            android:id="@+id/buttonUp"
+            android:layout_width="150dp"
+            android:layout_height="96dp"
+            android:layout_above="@+id/buttonDown"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2" />
+
+        <lucns.robot6wd.views.TriangleView
+            android:id="@+id/buttonDown"
+            android:layout_width="150dp"
+            android:layout_height="96dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2" />
+
+        <lucns.robot6wd.views.TriangleView
+            android:id="@+id/buttonLeft"
+            android:layout_width="96dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_6"
+            android:layout_toStartOf="@+id/buttonRight" />
+
+        <lucns.robot6wd.views.TriangleView
+            android:id="@+id/buttonRight"
+            android:layout_width="96dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_6" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/buttonBuzzer"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/icon_buzzer"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:background="@drawable/fab" />
+</RelativeLayout>
